@@ -1,0 +1,96 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.SearchPage>
+@using ContentModels = FunWithIndexes.Core.Models.Content;
+@{
+    Layout = "Master.cshtml";
+}
+@section header {
+}
+@section scriptFooter {
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="~/scripts/siteSearch.js"></script>
+}
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
+<section class="section">
+    <div class="container">
+        <div class="col-md-3">
+            <nav class="nav-bar nav-bar--list">
+                @Html.Partial("~/Views/Partials/Navigation/SubNavigation.cshtml")
+            </nav>
+            <form class="form-horizontal search" action="@Model.Content.Url" method="get">
+                <div class="form-group">
+                    <label class="sr-only" for="searchResultsInput">Search</label>
+                    <div class="input-group">
+                        <input class="form-control" id="searchResultsInput" name="search" type="text" value="@HttpContext.Current.Request["search"]" placeholder="Search">
+                        <div class="input-group-btn">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+            <div class="">
+                <h3 id="HasResultsMessage" style="display:none;"><span class="results-count">0</span> results</h3>
+                <h3 id="NoResultsMessage" >No results found</h3>
+            </div>
+
+        </div>
+        <div class="col-md-9">
+            <article>
+                @Html.GetGridHtml(Model.Content, "bodyText", "bootstrap3-fluid")
+
+                <div id="search_results_container" 
+                     data-search-box="#searchResultsInput"
+                     data-no-results="#NoResultsMessage"
+                     data-results-count=".results-count"
+                     data-has-results="#HasResultsMessage"
+                     ></div>
+
+                <section id="searchListing" class="g-pt-50 g-pb-90">
+                    <div class="container">
+                        <div class="results" id="SearchResultsContainer">
+                            <!-- Search Result -->
+                            <article>
+                                <header class="g-mb-15">
+                                    <h2 class="h4 g-mb-5">
+                                        <a class="u-link-v5 g-color-gray-dark-v1 g-color-primary--hover" href="#"></a>
+                                    </h2>
+                                    <span class="g-color-primary"></span>
+                                </header>
+
+                                <p class="g-mb-15">
+                                </p>
+                            </article>
+                            <!-- End Search Result -->
+                        </div>
+                        <hr class="g-brd-gray-light-v4 g-my-40">
+
+                        <nav aria-label="Page Navigation">
+                            <ul class="pagination">
+                                <li>
+                                    <a class="prev" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li page">
+                                    <a class="" href="#">1</a>
+                                </li>
+                                <li>
+                                    <a class="next" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <span class="">Page <span class="page-current">1</span> of <span class="page-count">1</span></span>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </section>
+
+            </article>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2048
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunWithIndexes.Web", "FunWithIndexes.Web\FunWithIndexes.Web.csproj", "{3D96989B-12E2-41B0-95B6-E9578B71D3FF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FunWithIndexes.Core", "FunWithIndexes.Core\FunWithIndexes.Core.csproj", "{B3B984B7-195E-4673-BF39-43658A50FB9D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{E3FCEB5B-7248-4812-8ADA-53766990F7AE}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.md = Readme.md
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3D96989B-12E2-41B0-95B6-E9578B71D3FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D96989B-12E2-41B0-95B6-E9578B71D3FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D96989B-12E2-41B0-95B6-E9578B71D3FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D96989B-12E2-41B0-95B6-E9578B71D3FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3B984B7-195E-4673-BF39-43658A50FB9D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3B984B7-195E-4673-BF39-43658A50FB9D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3B984B7-195E-4673-BF39-43658A50FB9D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3B984B7-195E-4673-BF39-43658A50FB9D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AC00BDAE-1BE4-4EAE-BD44-AA743C566050}
+	EndGlobalSection
+EndGlobal

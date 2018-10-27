@@ -1,0 +1,21 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage<ContentModels.Blog>
+@using ContentModels = FunWithIndexes.Core.Models.Content;
+@{
+    Layout = "Master.cshtml";
+}
+@Html.Partial("~/Views/Partials/SectionHeader.cshtml")
+
+<section class="section">
+
+    <div class="container">
+
+        @Umbraco.RenderMacro("latestBlogposts",
+                     new
+                     {
+                         numberOfPosts = Model.Content.HowManyPostsShouldBeShown,
+                         startNodeId = Model.Content.Id
+                     })
+       
+    </div>
+
+</section>

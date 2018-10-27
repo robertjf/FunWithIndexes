@@ -1,0 +1,23 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@using Umbraco.Web;
+@{
+    var site = Model.Content.Site();
+    var selection = site.Children.Where(x => x.IsVisible());
+}
+<!-- uncomment this line if you don't want it to appear in the top navigation -->
+<a class="nav-link @Html.Raw(Model.Content.Id == site.Id ? "navi-link--active" : "")" href="@site.Url">@site.Name</a>
+@foreach (var item in selection)
+{
+    <a class="nav-link @(item.IsAncestorOrSelf(Model.Content) ? "nav-link--active" : null)" href="@item.Url">@item.Name</a>
+}
+    <form id="searchform-1" class="form-inline search" action="/search" method="get">
+        <div class="form-group">
+            <label class="sr-only" for="search">Search</label>
+            <div class="input-group">
+                <input class="form-control " style="max-width: 100px;" name="search" type="search" placeholder="Search">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit"><i class="fas fa-search"></i> </button>
+                </span>
+            </div>
+        </div>
+    </form>
