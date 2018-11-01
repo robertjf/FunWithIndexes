@@ -22,10 +22,15 @@ namespace FunWithIndexes.Core
 
             var bodyFields = new[]
             {
-                "bodyText",
-                "contents",
-                "contactIntro",
                 "excerpt",
+                "heroDescription",
+
+                // Blog Categories - raw string.
+                "categories",
+
+                //"bodyText",
+                //"contents",
+                //"contactIntro",
             };
 
             var titleFields = new[]
