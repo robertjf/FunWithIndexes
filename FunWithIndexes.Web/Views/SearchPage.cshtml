@@ -6,12 +6,13 @@
 @section header {
 }
 @section scriptFooter {
-    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
-    <script src="~/scripts/siteSearch.js"></script>
+    @*<script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+        <script src="~/scripts/siteSearch.js"></script>*@
+    <script src="~/scripts/search.js"></script>
 }
 @Html.Partial("~/Views/Partials/SectionHeader.cshtml")
-<section class="section">
+<section class="section" id="searchListing">
     <div class="container">
         <div class="col-md-3">
             <nav class="nav-bar nav-bar--list">
@@ -33,7 +34,7 @@
 
             <div class="">
                 <h3 id="HasResultsMessage" style="display:none;"><span class="results-count">0</span> results</h3>
-                <h3 id="NoResultsMessage" >No results found</h3>
+                <h3 id="NoResultsMessage">No results found</h3>
             </div>
 
         </div>
@@ -41,12 +42,12 @@
             <article>
                 @Html.GetGridHtml(Model.Content, "bodyText", "bootstrap3-fluid")
 
-                <div id="search_results_container" 
-                     data-search-box="#searchResultsInput"
-                     data-no-results="#NoResultsMessage"
-                     data-results-count=".results-count"
-                     data-has-results="#HasResultsMessage"
-                     ></div>
+                @*<div id="search_results_container"
+                    data-search-box="#searchResultsInput"
+                    data-no-results="#NoResultsMessage"
+                    data-results-count=".results-count"
+                    data-has-results="#HasResultsMessage"
+                    ></div>*@
 
                 <section id="searchListing" class="g-pt-50 g-pb-90">
                     <div class="container">

@@ -22,20 +22,19 @@ namespace FunWithIndexes.Core
 
             var bodyFields = new[]
             {
-                "_content",
+                "bodyText",
+                "contents",
+                "contactIntro",
+                "excerpt",
             };
 
             var titleFields = new[]
             {
-                "_title",
+
+                "pageTitle",
             };
 
-            var fields = bodyFields.Concat(titleFields.Concat(new[] {
-                "_tags",
-                "_location",
-                "_categories",
-                "_author"
-                }));
+            var fields = bodyFields.Concat(titleFields);
 
 
             var results = provider.PerformSearch(terms, fields.ToArray());
